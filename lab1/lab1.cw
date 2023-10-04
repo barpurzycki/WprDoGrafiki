@@ -36,3 +36,8 @@ print("rozmiar wyrazu tablicy:",
       dane_obrazka.itemsize)
 
 #Podpunkt b.
+
+print("Adres 50,30:", dane_obrazka[50][30])
+print("Adres 90,40:", dane_obrazka[90][40])
+print("Adres 99,0:", dane_obrazka[99][0])
+
