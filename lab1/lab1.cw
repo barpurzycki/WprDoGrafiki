@@ -14,4 +14,11 @@ print("rozmiar:", obrazek.size)
 dane_obrazka = np.asarray(obrazek)
 print("---------------- informacje o tablicy obrazu----------------")
 print("typ danych tablicy:", dane_obrazka.dtype)
-print(dane_obrazka)
+
+obrazek_text = open('inicjaly.txt', 'w')
+for rows in dane_obrazka:
+    for item in rows:
+        obrazek_text.write(str(item) + ' ')
+    obrazek_text.write('\n')
+
+obrazek_text.close()
