@@ -22,3 +22,17 @@ for rows in dane_obrazka:
     obrazek_text.write('\n')
 
 obrazek_text.close()
+
+#Zadanie 4.
+
+#Podpunkt a.
+
+dane_obrazka = np.asarray(obrazek)
+print("typ danych tablicy:", dane_obrazka.dtype)
+print("rozmiar tablicy:", dane_obrazka.shape)
+print("liczba elementow:", dane_obrazka.size)
+print("wymiar tablicy:", dane_obrazka.ndim)
+print("rozmiar wyrazu tablicy:",
+      dane_obrazka.itemsize)
+
+#Podpunkt b.
