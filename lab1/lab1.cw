@@ -11,12 +11,16 @@ print("rozmiar:", obrazek.size)
 
 #Zadanie 3.
 
+obrazek = Image.open("inicjaly.bmp")
+
 dane_obrazka = np.asarray(obrazek)
-print("---------------- informacje o tablicy obrazu----------------")
-print("typ danych tablicy:", dane_obrazka.dtype)
+
+dane_obrazka_zj = dane_obrazka * 1
+
+print(dane_obrazka_zj)
 
 obrazek_text = open('inicjaly.txt', 'w')
-for rows in dane_obrazka:
+for rows in dane_obrazka_zj:
     for item in rows:
         obrazek_text.write(str(item) + ' ')
     obrazek_text.write('\n')
@@ -27,17 +31,18 @@ obrazek_text.close()
 
 #Podpunkt a.
 
-dane_obrazka = np.asarray(obrazek)
-print("typ danych tablicy:", dane_obrazka.dtype)
-print("rozmiar tablicy:", dane_obrazka.shape)
-print("liczba elementow:", dane_obrazka.size)
-print("wymiar tablicy:", dane_obrazka.ndim)
+dane_obrazka4a = np.asarray(obrazek)
+print("---------------- informacje o tablicy obrazu----------------")
+print("typ danych tablicy:", dane_obrazka4a.dtype)
+print("rozmiar tablicy:", dane_obrazka4a.shape)
+print("liczba elementow:", dane_obrazka4a.size)
+print("wymiar tablicy:", dane_obrazka4a.ndim)
 print("rozmiar wyrazu tablicy:",
-      dane_obrazka.itemsize)
+      dane_obrazka4a.itemsize)
 
 #Podpunkt b.
 
-print("Adres 50,30:", dane_obrazka[50][30])
-print("Adres 90,40:", dane_obrazka[90][40])
-print("Adres 99,0:", dane_obrazka[99][0])
+print("Adres 50,30:", {dane_obrazka4a[30][50]})
+print("Adres 90,40:", {dane_obrazka4a[40][90]})
+print("Adres 99,0:", {dane_obrazka4a[0][99]})
 
