@@ -46,3 +46,46 @@ print("Adres 50,30:", {dane_obrazka4a[30][50]})
 print("Adres 90,40:", {dane_obrazka4a[40][90]})
 print("Adres 99,0:", {dane_obrazka4a[0][99]})
 
+#Zadanie 5.
+
+inicjaly_bool = np.loadtxt("inicjaly.txt", dtype=np.bool_)
+
+
+#Inicjaly.txt
+
+t1_text = open('t1.txt', 'w')
+for rows in inicjaly_bool:
+    for item in rows:
+        t1_text.write(str(item) + ' ')
+    t1_text.write('\n')
+
+t1_text.close()
+
+#Inicjaly.bmp
+
+t2_text = open('t2.txt', 'w')
+for rows in dane_obrazka:
+    for item in rows:
+        t2_text.write(str(item) + ' ')
+    t2_text.write('\n')
+
+t2_text.close()
+
+#Zadanie 6.
+
+inicjaly_int = np.loadtxt("inicjaly.txt", dtype=np.uint8)
+
+t3_text = open('t3.txt', 'w')
+for rows in inicjaly_int:
+    for item in rows:
+        t3_text.write(str(item) + ' ')
+    t3_text.write('\n')
+
+t3_text.close()
+
+obrazek_ini_int = Image.fromarray(inicjaly_int)
+
+obrazek_ini_int.show()
+
+obrazek_ini_int.save("Zadanie6obrazek.bmp")
+
