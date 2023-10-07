@@ -83,6 +83,8 @@ for rows in inicjaly_int:
 
 t3_text.close()
 
+#Podpunkt a.
+
 obrazek_ini_int = Image.fromarray(inicjaly_int)
 
 obrazek_ini_int.show()
