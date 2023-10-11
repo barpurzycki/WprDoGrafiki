@@ -11,6 +11,11 @@ def rysuj_ramke_w_obrazie(obraz, grub):
             obraz_wstawiany[i][j]=0
         for j in range(w-grub,w):
             obraz_wstawiany[i][j]=0
+    for a in range(w):
+        for b in range(grub):
+            obraz_wstawiany[b][a]=0
+        for b in range(h-grub,h):
+            obraz_wstawiany[b][a]=0
     tab = obraz_wstawiany.astype(bool)
     return Image.fromarray(tab)
 
@@ -20,3 +25,6 @@ inicjaly = Image.open("inicjaly.bmp")
 inicjaly_paski = rysuj_ramke_w_obrazie(inicjaly, 5)
 
 inicjaly_paski.show()
+
+#Zadanie 2.
+
