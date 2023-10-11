@@ -1,6 +1,8 @@
 import numpy as np
 from PIL import Image
 
+inicjaly = Image.open("inicjaly.bmp")
+
 #Zadanie 1.
 
 def rysuj_ramke_w_obrazie(obraz, grub):
@@ -19,12 +21,21 @@ def rysuj_ramke_w_obrazie(obraz, grub):
     tab = obraz_wstawiany.astype(bool)
     return Image.fromarray(tab)
 
-
-inicjaly = Image.open("inicjaly.bmp")
-
-inicjaly_paski = rysuj_ramke_w_obrazie(inicjaly, 5)
-
-inicjaly_paski.show()
-
 #Zadanie 2.
+
+#Ramka grubosc 5
+
+inicjaly_ramka5 = rysuj_ramke_w_obrazie(inicjaly, 5)
+
+inicjaly_ramka5.show()
+
+inicjaly_ramka5.save("ramka5.bmp")
+
+#Ramka grubosc 10
+
+inicjaly_ramka10 = rysuj_ramke_w_obrazie(inicjaly, 10)
+
+inicjaly_ramka10.show()
+
+inicjaly_ramka10.save("ramka10.bmp")
 
