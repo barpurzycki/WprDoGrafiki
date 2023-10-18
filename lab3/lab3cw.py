@@ -60,3 +60,23 @@ obraz14_neg.save("obraz1_2N.png")
 
 #Zadanie 2.
 
+def rysuj_pasy_pionowe_3kolory(w, h, grub):
+    t = (h, w, 3)
+    tab = np.ones(t, dtype=np.uint8)
+    ile =  int(w/grub)
+    for k in range(ile):  # uwaga k = 0,1,2,3,4,5,8   bez dziewiatki
+        for g in range(grub):
+            i = k * grub + g  # i - indeks wiersza, j - indeks kolumny
+            for j in range(h):
+                if k % 3 == 0:
+                    tab[j, i] = [255, 0, 0]
+                elif k % 3 == 1:
+                    tab[j, i] = [0, 255, 0]
+                else:
+                    tab[j, i] = [0, 0, 255]
+    return tab
+
+tab2 = rysuj_pasy_pionowe_3kolory(200, 100, 10)
+obraz2 = Image.fromarray(tab2)
+
+obraz2.show()
