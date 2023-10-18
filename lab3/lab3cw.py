@@ -14,8 +14,52 @@ def rysuj_pasy_pionowe(w, h, grub, zmiana_koloru):
                 tab[j, i] = (k + zmiana_koloru) % 256
     return tab
 
-tab12 = rysuj_pasy_pionowe(480, 320, 10, 55)
+tab12 = rysuj_pasy_pionowe(300, 150, 5, 45)
 obraz12 = Image.fromarray(tab12)
 
 obraz12.show()
 
+obraz12.save("obraz1_1.jpg")
+obraz12.save("obraz1_1.png")
+
+def rysuj_ramke_lewo_gora(w, h, grub, zmiana_koloru):
+    t = (h, w)
+    tab = np.zeros(t, dtype=np.uint8)
+    for i in range(h):
+        for j in range(grub):
+            tab[i][j]= zmiana_koloru % 256
+    for a in range(w):
+        for b in range(grub):
+            tab[b][a]= zmiana_koloru % 256
+    return tab
+
+tab14 = rysuj_ramke_lewo_gora(300, 150, 30, 45)
+obraz14 = Image.fromarray(tab14)
+
+obraz14.show()
+
+obraz14.save("obraz1_2.jpg")
+obraz14.save("obraz1_2.png")
+
+def negatyw_szare(obraz):
+    tab = np.asarray(obraz)
+    h, w = tab.shape
+    tab_neg = tab.copy()
+    for i in range(h):
+        for j in range(w):
+            tab_neg[i, j] = 255 - tab[i, j]
+    return tab_neg
+
+tab12_neg = negatyw_szare(obraz12)
+obraz12_neg = Image.fromarray(tab12_neg)
+
+obraz12_neg.show()
+obraz12_neg.save("obraz1_1N.jpg")
+obraz12_neg.save("obraz1_1N.png")
+
+tab14_neg = negatyw_szare(obraz14)
+obraz14_neg = Image.fromarray(tab14_neg)
+
+obraz14_neg.show()
+obraz14_neg.save("obraz1_2N.jpg")
+obraz14_neg.save("obraz1_2N.png")
