@@ -80,3 +80,47 @@ tab2 = rysuj_pasy_pionowe_3kolory(200, 100, 10)
 obraz2 = Image.fromarray(tab2)
 
 obraz2.show()
+obraz2.save("obraz2.jpg")
+obraz2.save("obraz2.png")
+
+def rysuj_ramke_lewo_gora_kolor(w, h, grub):
+    t = (h, w, 3)
+    tab = np.ones(t, dtype=np.uint8)
+    for i in range(h):
+        for j in range(grub):
+            if i % 3 == 0:
+                tab[i][j] = [255, 0, 0]
+            elif i % 3 == 1:
+                tab[i][j] = [0, 255, 0]
+            else:
+                tab[i][j] = [0, 0, 255]
+    for a in range(w):
+        for b in range(grub):
+            if a % 3 == 0:
+                tab[b][a] = [255, 0, 0]
+            elif a % 3 == 1:
+                tab[b][a] = [0, 255, 0]
+            else:
+                tab[b][a] = [0, 0, 255]
+    return tab
+
+tab21 = rysuj_ramke_lewo_gora_kolor(200, 100, 10)
+obraz21 = Image.fromarray(tab21)
+
+obraz21.show()
+
+
+def negatyw_kolor(obraz):
+    tab = np.asarray(obraz)
+    h, w = tab.shape
+    tab_neg = tab.copy()
+    for i in range(h):
+        for j in range(w):
+            tab_neg[i, j] = 255 - tab[i, j]
+    return tab_neg
+
+
+tab2_neg = negatyw_szare(obraz2)
+obraz2_neg = Image.fromarray(tab2_neg)
+
+#obraz2_neg.show()
