@@ -86,3 +86,18 @@ diff_im1_1 = ImageChops.difference(im1_3, im1_4)
 diff_im1_1.save("diffzad2przyk2.png")
 
 #Zad 3.
+
+def ukryj_kod(obraz, im_kod):
+    t_obraz = np.asarray(obraz)
+    t_kodowany = t_obraz.copy()
+    h, w, d = t_obraz.shape
+    t_kod = np.asarray(im_kod)
+    for i in range(h):
+        for j in range(w):
+            if t_kod[i, j] > 0:
+                k = randint(0,2)
+                t_kodowany[i, j, k] = t_obraz[i, j, k] + 1
+    return Image.fromarray(t_kodowany)
+
+def odkoduj(obraz1, obraz2):
+    
