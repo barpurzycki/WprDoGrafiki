@@ -81,4 +81,8 @@ im1_4 = Image.open("obraz4.jpg")
 im1_4.save("obraz5.jpg")
 
 diff_im1 = ImageChops.difference(im1, im1_4)
+diff_im1.save("diffzad2.png")
 diff_im1_1 = ImageChops.difference(im1_3, im1_4)
+diff_im1_1.save("diffzad2przyk2.png")
+
+#Zad 3.
